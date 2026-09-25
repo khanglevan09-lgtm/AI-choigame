@@ -26,7 +26,7 @@ function generateRandomKey(type) {
   return `\({prefix}-\){r1}-${r2}`;
 }
 
-// Endpoint xác thực dành cho Bot kết nối về
+// Endpoint xác thực dành cho Client / Bot kết nối về
 app.post('/api/verify-key', (req, res) => {
   const { key } = req.body || {};
 
