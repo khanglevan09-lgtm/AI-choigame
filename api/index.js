@@ -4,7 +4,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Database tạm thời trong RAM
+// Database lưu tạm trong RAM
 const KEYS_DATABASE = {
   "PREMIUM-ADMIN-8888": {
     owner: "Admin System",
@@ -27,10 +27,10 @@ function generateRandomKey(type) {
 
 // Route trang chủ
 app.get('/', (req, res) => {
-  res.send('Auth Server Online & Working!');
+  res.status(200).send('Auth Server Online & Working!');
 });
 
-// Route Verify Key
+// API Kiểm tra Key
 app.post('/api/verify-key', (req, res) => {
   const { key } = req.body || {};
 
